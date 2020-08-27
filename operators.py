@@ -32,8 +32,8 @@ class MESH_OT_fair_vertices(bpy.types.Operator):
         'patch with respect to the specified continuity constraint')
     bl_options = {'REGISTER'}
 
-    continuity: types.Continuity.create_property()
-    triangulate: bpy.props.BoolProperty(
+    continuity = types.Continuity.create_property()
+    triangulate = bpy.props.BoolProperty(
         name = 'Triangulate',
         description = (
             'Triangulates affected region to produce higher quality results'),
@@ -66,8 +66,8 @@ class MESH_OT_fair_vertices_internal(bpy.types.Operator):
         'patch with respect to the specified continuity constraint')
     bl_options = {'INTERNAL', 'UNDO'}
 
-    continuity: types.Continuity.create_property()
-    triangulate: bpy.props.BoolProperty(
+    continuity = types.Continuity.create_property()
+    triangulate = bpy.props.BoolProperty(
         name = 'Triangulate',
         description = (
             'Triangulates affected region to produce higher quality results'),
@@ -123,7 +123,7 @@ class MESH_OT_fair_vertices_internal(bpy.types.Operator):
         return {'RUNNING_MODAL'}
 
     def modal_finish(self, context: bpy.types.Context, event: bpy.types.Event):
-        context.area.header_text_set(text = None)
+        context.area.header_text_set(text = "")
         context.window_manager.event_timer_remove(self._timer)
         return {'CANCELLED'} if self._worker.is_cancelled() else {'FINISHED'}
 
@@ -227,8 +227,8 @@ class SCULPT_OT_fair_vertices(bpy.types.Operator):
         'mesh patch with respect to the specified continuity constraint')
     bl_options = {'REGISTER'}
 
-    continuity: types.Continuity.create_property()
-    invert_mask: bpy.props.BoolProperty(
+    continuity = types.Continuity.create_property()
+    invert_mask = bpy.props.BoolProperty(
         name = 'Invert Mask',
         description = (
             'If this option is enabled, mesh fairing is applied to masked ' +
@@ -262,8 +262,8 @@ class SCULPT_OT_fair_vertices_internal(bpy.types.Operator):
         'mesh patch with respect to the specified continuity constraint')
     bl_options = {'INTERNAL', 'UNDO'}
 
-    continuity: types.Continuity.create_property()
-    invert_mask: bpy.props.BoolProperty(
+    continuity = types.Continuity.create_property()
+    invert_mask = bpy.props.BoolProperty(
         name = 'Invert Mask',
         description = (
             'If this option is enabled, mesh fairing is applied to masked ' +
@@ -496,16 +496,16 @@ class SCRIPT_OT_install_module(bpy.types.Operator):
     bl_description = 'Installs given Python module with pip'
     bl_options = {'INTERNAL'}
 
-    name: bpy.props.StringProperty(
+    name = bpy.props.StringProperty(
         name = 'Module Name',
         description = 'Installs the given module')
 
-    options: bpy.props.StringProperty(
+    options = bpy.props.StringProperty(
         name = 'Command line options',
         description = 'Command line options for pip (e.g. "--no-deps -r")',
         default = '')
 
-    reload_scripts: bpy.props.BoolProperty(
+    reload_scripts = bpy.props.BoolProperty(
         name = 'Reload Scripts',
         description = 'Reloads Blender scripts upon successful installation',
         default = True)

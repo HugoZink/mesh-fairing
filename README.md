@@ -1,5 +1,7 @@
 # **Mesh Fairing**
 
+**This is a fork of Mesh Fairing backported to Blender 2.79. Very minor issues may sometimes occur. If your vertex normals look totally messed up after the mesh fairing operation, just undo and try again.**
+
 ![fairing](https://user-images.githubusercontent.com/8960984/59396054-36e85880-8d44-11e9-873b-d8aa2293b2d5.gif)
 
 This Blender addon provides an alternative smoothing operation. Conventional smoothing has a tendency to cause pinching, bumps, and other undesirable artifacts; however, mesh fairing results in a smooth-as-possible mesh patch.
